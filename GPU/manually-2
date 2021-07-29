@@ -1,0 +1,9 @@
+# copy the kube-scheduler file under /etc/kubernetes/manifest/
+
+kubectl label node worker-gpu-0 gpushare=true
+
+# on master we can check via 
+
+kubectl inspect gpushare
+
+kubectl describe node testserver01 | grep Capacity -A 20

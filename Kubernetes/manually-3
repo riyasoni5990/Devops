@@ -1,0 +1,21 @@
+#turn off swap memory on each system
+vim /etc/fstab
+swapoff -a
+
+#make entery of each server in /etc/hosts
+vim /etc/hosts
+
+#On master node
+sudo kubeadm init \
+  --pod-network-cidr=192.168.0.0/16 \
+  --control-plane-endpoint=<ip-of-master>
+
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+kubectl cluster-info
+
+kubectl create -f calico.yaml
+
+#Run Join token on each worker server

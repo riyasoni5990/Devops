@@ -1,0 +1,9 @@
+#!/bin/bash
+
+sudo add-apt-repository ppa:alessandro-strada/ppa
+
+sudo apt update && sudo apt install google-drive-ocamlfuse
+
+mkdir ~/googledrive
+
+google-drive-ocamlfuse ~/googledrive -headless -id 843266952307-rnpdmbi1ea2n6ctsri99g3plj7vtb28c.apps.googleusercontent.com -secret HwCDGlPXvD2RQA0MIuezL1H_

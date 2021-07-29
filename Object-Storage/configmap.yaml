@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: s3-config
+data:
+  S3_REGION: "us-geo"
+  S3_BUCKET: "my-one"
+  ACCESS_KEY: "2794cfbf9040431884f7a814d7e8c724"
+  SECRET_KEY: "cdca092d7fcadafea32fa1827ca9ec9c68f1f47c21528f95"
